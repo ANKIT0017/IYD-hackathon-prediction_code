@@ -1,10 +1,20 @@
 # 🧠 Ramayana Semantic Verifier – IYD Hackathon
 
-This project leverages **Large Language Models (LLMs)** and **semantic search** to verify whether a statement is true according to **Valmiki's Ramayana**.
+This project leverages **Large Language Models (LLMs)** and **semantic search** to verify whether a statement is true according to **Valmiki's Ramayana**. 
+
+Basically a **A custom, lightweight RAG-style semantic verifier for Ramayana — purpose-built for high-accuracy fact checking using retrieval + generation.**
+
 
 You can:
 - 🖐️ Enter queries manually
 - 📊 Upload a batch CSV file for bulk verification
+
+---
+
+## ✅ Already Done
+
+- ✅ **Data has been extracted** from the original Valmiki Ramayana source  
+- ✅ **Extracted data has been cleaned** and structured into `kanda`, `sarga`, `shloka`, and `explanation` format
 
 ---
 
@@ -28,10 +38,11 @@ pip install gdown langchain langchain_community langchain_ollama sentence-transf
 
 ## 🚀 How It Works
 
-### 📥 Step 1: Download Embedded Dataset
+### 📥 Step 1: Download or Generate Embedded Dataset
 
-The system downloads a preprocessed `.json` file containing **Ramayana sentences with vector embeddings**.  
-These embeddings are computed using a SentenceTransformer model and are used for efficient semantic comparison.
+You can:
+- 🔽 Automatically download precomputed embeddings (via Google Drive), or
+- 🧠 Generate your own embeddings using the provided `Encoder.py` script (see 📄 Dataset Embedding Script below)
 
 ---
 
@@ -88,8 +99,23 @@ After processing, you’ll receive a downloadable CSV with the following structu
 
 This tool depends on **precomputed embeddings and metadata** for fast semantic search.
 
-- 🧾 [link1](#) – Dataset Extraction Code  
-- 🤖 [link2](#) – Embedding Generation Code
+- 📂 You can use the `Encoder.py` script (included in this repository) to generate your own embedding file (`complete_shloka_with_embeddings.json`) from the cleaned dataset (`ramayana.json`)
+
+---
+
+## 📄 Dataset Embedding Script – `Encoder.py`
+
+You can generate your own embeddings by running:
+
+```bash
+python Encoder.py
+```
+
+This script will:
+1. Load the cleaned Valmiki Ramayana data (`ramayana.json`)
+2. Extract relevant fields: `kanda`, `sarga`, `shloka`, and `explanation`
+3. Generate semantic embeddings using the model `distilbert-base-nli-stsb-mean-tokens`
+4. Save the data with embeddings to `complete_shloka_with_embeddings.json`
 
 ---
 
@@ -123,3 +149,4 @@ True
 
 - 💻 Built for **IYD Hackathon**
 - 🔗 Powered by **Open-Source LLMs**, **LangChain**, and **Semantic Search**
+-   **DATA Extraction Pipeline link** ---> https://github.com/KrishnaGupta0405/IYD-RAMAYAN-HACKATHON
