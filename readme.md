@@ -150,3 +150,8 @@ True
 - 💻 Built for **IYD Hackathon**
 - 🔗 Powered by **Open-Source LLMs**, **LangChain**, and **Semantic Search**
 -   **DATA Extraction Pipeline link** ---> https://github.com/KrishnaGupta0405/IYD-RAMAYAN-HACKATHON
+
+
+# TEAM--
+  [krishna_Gupta](https://github.com/KrishnaGupta0405)
+  [ANKIT_KUMAR](https://github.com/ANKIT0017)
